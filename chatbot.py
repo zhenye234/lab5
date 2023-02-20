@@ -13,8 +13,8 @@ def main():
     updater = Updater(token=(os.environ['ACCESS_TOKEN']), use_context=True)
     dispatcher = updater.dispatcher
     global redis1
-    redis1 = redis.Redis(host=(config['REDIS']['HOST']), password=(config['REDIS']
-['PASSWORD']), port=(config['REDIS']['REDISPORT']))
+    redis1 = redis.Redis(host=(os.environ['REDIS']['HOST']), password=(os.environ['REDIS']
+['PASSWORD']), port=(os.environ['REDIS']['REDISPORT']))
 
     logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s', level=logging.INFO)
     # register a dispatcher to handle message: here we register an echo dispatcher
